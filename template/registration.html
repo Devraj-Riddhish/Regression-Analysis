@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="login-box">
+    <h1>Registration</h1>
+    <form action="#" method="POST" id="registration-form">
+        {% csrf_token %}
+        
+        <div class="textbox">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <input type="text" name="fname" id="fname" placeholder="First Name" required>
+        </div>
+        {% if len_error %}
+            <p class="text-danger">{{ len_error }}</p>
+        {% endif %}
+        
+        <div class="textbox">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+        </div>
+        {% if name_error %}
+            <p class="text-danger">{{ name_error }}</p>
+        {% endif %}
+
+        <div class="textbox">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        {% if email_error %}
+            <p class="text-danger">{{ email_error }}</p>
+        {% endif %}
+        
+        <div class="textbox">
+            <i class="fa fa-user"></i>
+            <input type="text" name="username" id="username" placeholder="Username" required>
+        </div>
+        {% if username_error %}
+            <p class="text-danger">{{ username_error }}</p>
+        {% endif %}
+
+        <div class="textbox">
+            <i class="fa fa-key"></i>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+        </div>
+        
+        <button type="submit" class="btn btn-outline-success" id="submit">Submit</button>
+
+        <center><a href="/login" style="color: gray;">Go To Login</a></center>
+    </form>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('#registration-form').submit(function(event){
+        let fname = $('#fname').val().trim();
+        let lname = $('#lname').val().trim();
+        let email = $('#email').val().trim();
+        let username = $('#username').val().trim();
+        let password = $('#password').val().trim();
+
+        // Name Validation (Only letters, at least 3 characters)
+        let nameRegex = /^[A-Za-z]{3,}$/;
+        if (!nameRegex.test(fname) || !nameRegex.test(lname)) {
+            alert("First and Last Name must be at least 3 letters and contain only alphabets.");
+            event.preventDefault();
+            return false;
+        }
+
+        // Email Validation (Standard email format)
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address.");
+            event.preventDefault();
+            return false;
+        }
+
+        // Username Validation (Minimum 5 characters)
+        if (username.length < 5) {
+            alert("Username must be at least 5 characters long.");
+            event.preventDefault();
+            return false;
+        }
+
+        // Password Validation (Minimum 6 characters)
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            event.preventDefault();
+            return false;
+        }
+    });
+});
+</script>
+
+<script src="https://use.fontawesome.com/3658209286.js"></script>
+</body>
+</html>

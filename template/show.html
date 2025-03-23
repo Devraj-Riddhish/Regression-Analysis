@@ -1,0 +1,621 @@
+{% extends 'layout/master.html' %}
+{% load static %}
+{% block main %}
+
+{% if show_redwine %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Red Wine Data</h1><br>    
+  <tr>
+    <th>No:</th>
+    <th>Fixed Acidity</th> 
+    <th>volatile Acidity</th>
+    <th>Citric Acid</th>
+    <th>Residual Sugar</th>
+    <th>Chlorides</th>
+    <th>Free Sulfur Dioxide</th>
+    <th>Total Sulfur Dioxide</th>
+    <th>Density</th>
+    <th>Ph</th>
+    <th>Sulphates</th>
+    <th>Alcohol</th>
+    <th>Quality</th>
+  </tr>
+  {% for x in show_redwine %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.Fixed_Acidity}}</td>
+    <td>{{x.volatile_Acidity}}</td>
+    <td>{{x.Citric_Acid}}</td>
+    <td>{{x.Residual_Sugar}}</td>
+    <td>{{x.Chlorides}}</td>
+    <td>{{x.Free_Sulfur_Dioxide}}</td>
+    <td>{{x.Total_Sulfur_Dioxide}}</td>
+    <td>{{x.Density}}</td>
+    <td>{{x.Ph}}</td>
+    <td>{{x.Sulphates}}</td>
+    <td>{{x.Alcohol}}</td>
+    <td>{{x.Quality}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <ul class="pagination">
+        {% if show_redwine.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="First">
+            <span aria-hidden="true">&laquo;&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="?page={{ show_redwine.previous_page_number }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% endif %}
+
+        {% for n in show_redwine.paginator.page_range %}
+        {% if show_redwine.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}</span>
+        </li>
+        {% elif n > show_redwine.number|add:'-3' and n < show_redwine.number|add:'3' %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ n }}">{{ n }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        {% if show_redwine.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ show_redwine.next_page_number }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="?page={{ show_redwine.paginator.num_pages }}" aria-label="Last">
+            <span aria-hidden="true">&raquo;&raquo;</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% elif boston_housing_data %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Boston Housing Data</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>CRIM</th> 
+    <th>ZN</th>
+    <th>INDUS</th>
+    <th>CHAS</th>
+    <th>NOX</th>
+    <th>RM</th>
+    <th>AGE</th>
+    <th>DIS</th>
+    <th>TAX</th>
+    <th>PTRATIO</th>
+    <th>B</th>
+    <th>LSTAT</th>
+    <th>PRICE</th>
+  </tr>
+  {% for x in boston_housing_data %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.CRIM}}</td>
+    <td>{{x.ZN}}</td>
+    <td>{{x.INDUS}}</td>
+    <td>{{x.CHAS}}</td>
+    <td>{{x.NOX}}</td>
+    <td>{{x.RM}}</td>
+    <td>{{x.AGE}}</td>
+    <td>{{x.DIS}}</td>
+    <td>{{x.TAX}}</td>
+    <td>{{x.PTRATIO}}</td>
+    <td>{{x.B}}</td>
+    <td>{{x.LSTAT}}</td>
+    <td>{{x.PRICE}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if boston_housing_data.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in boston_housing_data.paginator.page_range %}
+        {% if boston_housing_data.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > boston_housing_data.number|add:'-5' and n < boston_housing_data.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if boston_housing_data.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ boston_housing_data.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif black_friday_catb %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Black Friday Catb1</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>User_ID</th> 
+    <th>Product_ID</th>
+    <th>Purchase</th>
+  </tr>
+  {% for x in black_friday_catb %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.User_ID}}</td>
+    <td>{{x.Product_ID}}</td>
+    <td>{{x.Purchase}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if black_friday_catb.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in black_friday_catb.paginator.page_range %}
+        {% if black_friday_catb.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > black_friday_catb.number|add:'-5' and n < black_friday_catb.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if black_friday_catb.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ black_friday_catb.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif black_friday_train %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Black Friday Train</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>User_ID</th> 
+    <th>Product_ID</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Occupation</th> 
+    <th>City_Category</th>
+    <th>Stay_In_Current_City_Year</th>
+    <th>Marital_Status</th>
+    <th>Product_Category_1</th> 
+    <th>Product_Category_2</th>
+    <th>Product_Category_3</th>
+    <th>Purchase</th>
+  </tr>
+  {% for x in black_friday_train %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.User_ID}}</td>
+    <td>{{x.Product_ID}}</td>
+    <td>{{x.Gender}}</td>
+    <td>{{x.Age}}</td>
+    <td>{{x.Occupation}}</td>
+    <td>{{x.City_Category}}</td>
+    <td>{{x.Stay_In_Current_City_Year}}</td>
+    <td>{{x.Marital_Status}}</td>
+    <td>{{x.Product_Category_1}}</td>
+    <td>{{x.Product_Category_2}}</td>
+    <td>{{x.Product_Category_3}}</td>
+    <td>{{x.Purchase}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if black_friday_train.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in black_friday_train.paginator.page_range %}
+        {% if black_friday_train.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > black_friday_train.number|add:'-5' and n < black_friday_train.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if black_friday_train.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ black_friday_train.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+
+{% elif black_friday_test %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Black Friday Test</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>User_ID</th> 
+    <th>Product_ID</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Occupation</th> 
+    <th>City_Category</th>
+    <th>Stay_In_Current_City_Year</th>
+    <th>Marital_Status</th>
+    <th>Product_Category_1</th> 
+    <th>Product_Category_2</th>
+    <th>Product_Category_3</th>
+  </tr>
+  {% for x in black_friday_test %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.User_ID}}</td>
+    <td>{{x.Product_ID}}</td>
+    <td>{{x.Gender}}</td>
+    <td>{{x.Age}}</td>
+    <td>{{x.Occupation}}</td>
+    <td>{{x.City_Category}}</td>
+    <td>{{x.Stay_In_Current_City_Year}}</td>
+    <td>{{x.Marital_Status}}</td>
+    <td>{{x.Product_Category_1}}</td>
+    <td>{{x.Product_Category_2}}</td>
+    <td>{{x.Product_Category_3}}</td>
+   
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if black_friday_test.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in black_friday_test.paginator.page_range %}
+        {% if black_friday_test.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > black_friday_test.number|add:'-5' and n < black_friday_test.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if black_friday_test.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ black_friday_test.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif walmart_sales_feature %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Walmart Sales Feature</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>Store</th> 
+    <th>Date</th>
+    <th>Temperature</th>
+    <th>Fuel_Price</th>
+    <th>MarkDown1</th>
+    <th>MarkDown2</th> 
+    <th>MarkDown3</th>
+    <th>MarkDown4</th>
+    <th>MarkDown5</th>
+    <th>CPI</th> 
+    <th>Unemployment</th>
+    <th>IsHoliday</th>
+  </tr>
+  {% for x in walmart_sales_feature %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.Store}}</td>
+    <td>{{x.Date}}</td>
+    <td>{{x.Temperature}}</td>
+    <td>{{x.Fuel_Price}}</td>
+    <td>{{x.MarkDown1}}</td>
+    <td>{{x.MarkDown2}}</td>
+    <td>{{x.MarkDown3}}</td>
+    <td>{{x.MarkDown4}}</td>
+    <td>{{x.MarkDown5}}</td>
+    <td>{{x.CPI}}</td>
+    <td>{{x.Unemployment}}</td>
+    <td>{{x.IsHoliday}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if walmart_sales_feature.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in walmart_sales_feature.paginator.page_range %}
+        {% if walmart_sales_feature.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > walmart_sales_feature.number|add:'-5' and n < walmart_sales_feature.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if walmart_sales_feature.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ walmart_sales_feature.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif walmart_sales_store %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Walmart Sales Store</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>Store</th> 
+    <th>Type</th>
+    <th>Size</th>
+  </tr>
+  {% for x in walmart_sales_store %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.Store}}</td>
+    <td>{{x.Type}}</td>
+    <td>{{x.Size}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if walmart_sales_store.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in walmart_sales_store.paginator.page_range %}
+        {% if walmart_sales_store.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > walmart_sales_store.number|add:'-5' and n < walmart_sales_store.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if walmart_sales_store.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ walmart_sales_store.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif walmart_sales_train %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Walmart Sales Train</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>Store</th> 
+    <th>Dept</th>
+    <th>Date</th>
+    <th>Weekly_Sales</th>
+    <th>IsHoliday</th>
+  </tr>
+  {% for x in walmart_sales_train %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.Store}}</td>
+    <td>{{x.Dept}}</td>
+    <td>{{x.Date}}</td>
+    <td>{{x.Weekly_Sales}}</td>
+    <td>{{x.IsHoliday}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if walmart_sales_train.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in walmart_sales_train.paginator.page_range %}
+        {% if walmart_sales_train.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > walmart_sales_train.number|add:'-5' and n < walmart_sales_train.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if walmart_sales_train.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ walmart_sales_train.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% elif walmart_sales_test %}
+<br>
+<table class="table table-bordered table-hover">
+<h1 class="text-center", style="color: #800000;">Walmart Sales Test</h1><br>
+  <tr>
+    <th>No:</th>
+    <th>Store</th> 
+    <th>Dept</th>
+    <th>Date</th>
+    <th>IsHoliday</th>
+  </tr>
+  {% for x in walmart_sales_test %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.Store}}</td>
+    <td>{{x.Dept}}</td>
+    <td>{{x.Date}}</td>
+    <td>{{x.IsHoliday}}</td>
+  </tr>
+  {% endfor %}
+
+{% elif show %}
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <ul class="pagination">
+        {% if walmart_sales_test.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page=1" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">begin</span>
+          </a>
+        </li>
+        {% endif %}
+        {% for n in walmart_sales_test.paginator.page_range %}
+        {% if walmart_sales_test.number == n %}
+        <li class="page-item active">
+          <span class="page-link">{{ n }}<span class="sr-only">(current)</span></span>
+        </li>
+        {% elif n > walmart_sales_test.number|add:'-5' and n < walmart_sales_test.number|add:'5' %}
+        <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if walmart_sales_test.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ walmart_sales_test.paginator.num_pages }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">end</span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}

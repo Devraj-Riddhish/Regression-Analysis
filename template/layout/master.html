@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About us</title>
+	{% load static %}
+	<!-- Latest compiled and minified CSS -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	<script src="https://use.fontawesome.com/3658209286.js"></script>
+
+</head>
+<body>
+	<style>
+		.logo_image
+		{
+			width: 50px; 
+			height: 50px;
+		}
+		.logo_image img
+		{
+			width: 150px;
+			height: 110px;
+			margin-left: 0px;
+			margin-top:20px; 
+		}
+	</style>
+	
+	<div class="logo_image">
+		<a href="/index"><img src="{% static 'image/ra.png' %}"></a>
+	</div>
+	<div style="float:right; margin-right: 50px; color: #ABA104">
+		<h1>Regression Analysis</h1>
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand text-white" href="/index">Regression Analysis</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link text-white" href="/index">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white" href="/about">About us</a>
+			</li>
+			<li class="nav-item">
+				<div class="btn-group">
+					<a href="#" class="nav-link text-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">Analysis</button></a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/analysis/boston_housing">Boston Housing Data</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/analysis/black_friday_sales">Black Friday Sales</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/analysis/redwine">Red Wine Quality</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/analysis/Walmart_sales">Walmart Sales Forcast</a>
+					</div>
+				</div>
+			</li>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="/upload">Upload Data</a>
+		</li>
+		<li class="nav-item">
+			<div class="btn-group">
+				<a href="#" class="nav-link text-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">Show Data</button></a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/boston_housing">Boston Housing Data</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/show">Red Wine Qaulity</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/black_friday_catb1">Black Friday (Catb1)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/black_friday_train">Black Friday (Train)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/black_friday_test">Black Friday (Test)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/walmart_sales_features">Walmart Sales (Features)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/walmart_sales_store">Walmart Sales (Store)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/walmart_sales_train">Walmart Sales (Train)</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/walmart_sales_test">Walmart Sales (Test)</a>
+				</div>
+			</div>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-white" href="/logout">Logout</a>
+		</li>
+	</ul>
+</div>
+</nav>
+
+{% block main %}
+{% endblock %}

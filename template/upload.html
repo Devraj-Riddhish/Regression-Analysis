@@ -1,0 +1,28 @@
+{% extends 'layout/master.html' %}
+{% load static %}
+{% block main %}
+
+<center>
+	<div class="upload_data" style="margin-top:150px;">
+		<form action="/upload" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<div style="border: 1px solid black; width: 20%;">
+			<input type="file" name="upload_data">
+		</div>
+		<br>
+		<input type="submit" name="submit" class="btn btn-success"></form>
+	</div>
+</center>
+
+<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+
+</body>
+</html>
+{% endblock %}

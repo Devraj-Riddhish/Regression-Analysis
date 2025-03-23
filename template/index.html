@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regression Analysis</title>
+  <link rel="stylesheet" href="{% static 'css/nav_style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo"></h3>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+  <div class="main-container">
+    <div class="main">
+      <header>
+        <div class="overlay">
+          <div class="inner">
+            <h2 class="title">Regression Analysis</h2>
+            <p>Regression analysis is a set of statistical methods used for the estimation of relationships between a dependent variable and one or more independent variables</p>
+          </div>
+        </div>
+      </header>
+    </div>
+  <div class="shadow one"></div>
+  <div class="shadow two"></div>
+  </div>
+
+  <div class="links">
+    <ul>
+      <li>
+        <a href="/about" style="--i: 0.05s;">About us</a>
+      </li>
+      <li>
+        <a href="/upload" style="--i: 0.10s;">Upload Data</a>
+      </li>
+      <li>
+        <a href="/show" style="--i: 0.15s;">Show Data</a>
+      </li>
+      <li>
+        <a href="/analysis/boston_housing" style="--i: 0.20s;">Boston Housing Data</a>
+      </li>
+      <li>
+        <a href="/analysis/black_friday_sales" style="--i: 0.25s;">Black Friday Sales</a>
+      </li>
+      <li>
+        <a href="/analysis/redwine" style="--i: 0.30s;">Redwine Quality</a>
+      </li>
+      <li>
+        <a href="/analysis/Walmart_sales" style="--i: 0.35s;">Walmart Sales Forcast</a>
+      </li>
+      <li>
+        <a href="/logout" style="--i: 0.40s;">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    <script src="{% static 'js/navigation.js' %}"></script>
+  </body>
+</html>

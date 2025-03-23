@@ -1,0 +1,547 @@
+{% extends 'layout/master.html' %}
+{% load static %}
+{% block main %}
+
+<style type="text/css">
+	.boston_ana img
+	{
+		width: 100%;
+	}
+</style>
+<br>
+<center><h1 class="text-center", style="color: #33cc33;">Boston Housing Data Analysis Report</h1></center>
+<hr/>
+<br/>
+
+<div class ="container ">
+	<div class ="row">
+
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_1.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Here, we Intialised mutiple library of python like pandas, matplolib, numpy, seaborn, warnings. Matplotlib library is used forgraphics representation of our data set.</p>
+		</div>
+
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">The head function show first 10 line of dataset</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_2.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_3.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">This function show shape of the dataset</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">The describe() method is used for calculating some statistical data like percentile, mean and std of the numerical values of the Series or DataFrame. It analyzes both numeric and object series and also the DataFrame column sets of mixed data types.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_4.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_5.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">The info() function is used to print a concise summary of a DataFrame. This method prints information about a DataFrame including the index dtype and column dtypes, non-null values and memory usage.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">isnull(). sum(). sum() returns the number of missing values in the data set. A simple way to deal with data containing missing values is to skip rows with missing values in the dataset.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_6.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_7.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">The pairplot plot is shown in the image below. Its using the (famous) iris flower data set.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">you aren't using for ax in axes and also you aren' using sns.distplot(...., ax=ax). You can use plt.subplots(...., sharex=True, sharey=True) to share the x and y axis. Your example code already seems to use only one color.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_8.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_9.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">you aren't using for ax in axes and also you aren' using sns.distplot(...., ax=ax). You can use plt.subplots(...., sharex=True, sharey=True) to share the x and y axis. Your example code already seems to use only one color.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">corr() is used to find the pairwise correlation of all columns in the dataframe</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_10.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_11.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">A heatmap is a two-dimensional graphical representation of data where the individual values that are contained in a matrix are represented as colors. The seaborn python package allows the creation of annotated heatmaps which can be tweaked using Matplotlib tools as per the creator's requirement. Annotated Heatmap.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">A heatmap is a two-dimensional graphical representation of data where the individual values that are contained in a matrix are represented as colors. The seaborn python package allows the creation of annotated heatmaps which can be tweaked using Matplotlib tools as per the creator's requirement. Annotated Heatmap.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_12.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_13.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">index() is an inbuilt function in Python, which searches for a given element from the start of the list and returns the lowest index where the element appears</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">Creating the Correlation matrix and Selecting the Upper trigular matrix. .. Droping the column with high correlation.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_14.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_15.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Creating the Correlation matrix and Selecting the Upper trigular matrix. .. Droping the column with high correlation.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent thr corr index value of the data set</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_16.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_17.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">When two sets of data are strongly linked together we say they have a High Correlation. The word Correlation is made of Co- (meaning "together"), and Relation.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">Tight_layout automatically adjusts subplot params so that the subplot(s) fits in to the figure area.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_18.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_19.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Heatmap is defined as a graphical representation of data using colors to visualize the value of the matrix. ... Heatmap is also defined by the name of the shading matrix. Heatmaps in Seaborn can be plotted by using the seaborn.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the price scenario of the data </p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_20.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_21.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">After executing these Python instructions, we can verify that x_train.shape takes the form of (60000, 784) and x_test.shape takes the form of (10000, 784)</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">LinearRegression fits a linear model with coefficients w = (w1, …, wp) to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation. Whether to calculate the intercept for this model.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_22.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_23.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">There are multiple ways to deal with this problem. The easiest way is to delete or eliminate one of the perfectly correlated features</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">Shows corelated columns</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_24.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_25.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represt the value of the r2_score , mae and mse.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the features name	#feature	corr_value	r2_score	MAE	MSE Of data set</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_26.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_27.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the features name	#feature	corr_value	r2_score	MAE	MSE Of data set</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">Here, we Intialised mutiple library of python like pandas, matplolib, numpy, seaborn, warnings.
+			matplotlib library is used forgraphics representation of our data set.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_28.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_29.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the prise of th each block of the data set</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent of thr price of the threshold=0.60</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_30.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_31.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the value of the 1 st the column and row</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the value of the correlated _ data columns</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_32.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_33.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the price </p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the calue of LAST and price</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_34.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_35.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the 1st five value of the index</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the value of the features name	#feature	corr_value	r2_score	MAE	MSE</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_36.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_37.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the value of the RM and Price</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent thr relation between features name	#feature	corr_value	r2_score	MAE	MSE</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_38.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_39.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represrnt the price ratio according to the threshold 0.40</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the relation between INDUS	NOX	RM	TAX	PTRATIO	LSTAT	Price</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_40.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_41.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the relation between features name	#feature	corr_value	r2_score	MAE	MSE</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">represn thr numeric value of the data set </p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_42.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_43.png' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Represent the chart according to the indux,nox,rm,tax,ptratio,lstat</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">Represent the chart according to the indux,nox,rm,tax,ptratio,lstat</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/boston/boston_44.png' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+{% endblock %}

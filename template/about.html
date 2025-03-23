@@ -1,0 +1,52 @@
+{% extends 'layout/master.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container-fluid about_image">
+	<h3 class="text-dark"><i class="fa fa-snowflake-o" aria-hidden="true"></i>&nbsp;&nbsp; Boston Housing Data</h3>
+	<div class="row about_image">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5">
+			<img src="{% static 'image/bosten.jpeg' %}">
+		</div>
+		<div class="col-lg-5"><p class="text-secondary">In this project, you will evaluate the performance and predictive power of a model that has been trained and tested on data collected from homes in suburbs of Boston, Massachusetts. A model trained on this data that is seen as a good fit could then be used to make certain predictions about a home — in particular, its monetary value. This model would prove to be invaluable for someone like a real estate agent who could make use of such information on a daily basis.The dataset for this project originates from the UCI Machine Learning Repository. The Boston housing data was collected in 1978 and each of the 506 entries represent aggregated data about 14 features for homes from various suburbs in Boston, Massachusetts. For the purposes of this project, the following preprocessing steps have been made to the dataset:16 data points have an 'MEDV' value of 50.0. These data points likely contain missing or censored values and have been removed.</p></div>
+		<div class="col-lg-1"></div>
+	</div>
+</div>
+
+<div class="container-fluid about_image">
+	<h3 class="text-dark"><i class="fa fa-snowflake-o" aria-hidden="true"></i>&nbsp;&nbsp;Walmart Sales Data</h3>
+	<div class="row about_image">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5"><p class="text-secondary">The aim of this project is to enable category managers of Walmart to check the weekly and monthly sales of the departments. Analysis includes the effect of markdowns on the sales and the extent of effect on the sales by fuel prices, temperature, unemployment, CPI etc. has been analyzed using simple and multiple linear regression models. Analytical tools used in the project are Rstudio and Shiny app. The user interface for this project is user friendly as the user has to use the drop down The decision makers of Walmart should be able to analyze the effect of various factors affecting the sales of the products in their 45 stores. The various factors include weather condition i.e. temperature, store size, fuel prices, markdown in prices, unemployment and CPI.menus and slider inputs to see the variation in graph.</p></div>
+		<div class="col-lg-5">
+			<img src="{% static 'image/Walmart.jpg' %}">
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid about_image">
+	<h3 class="text-dark"><i class="fa fa-snowflake-o" aria-hidden="true"></i> &nbsp;&nbsp;Redwine Quality Prediction</h3>
+	<div class="row about_image">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5">
+			<img src="{% static 'image/Wine.jpg' %}">
+		</div>
+		<div class="col-lg-5"><p class="text-secondary">Wine (from Latin vinum) is an alcoholic beverage made from grapes, generally Vitis vinifera, fermented without the addition of sugars, acids, enzymes, water, or other nutrients. Yeast consumes the sugar in the grapes and converts it to ethanol and carbon dioxide. Different varieties of grapes and strains of yeasts produce different styles of wine. These variations result from the complex interactions between the biochemical development of the grape, the reactions involved in fermentation, the terroir, and the production process. Many countries enact legal appellations intended to define styles and qualities of wine. These typically restrict the geographical origin and permitted varieties of grapes, as well as other aspects of wine production. Wines not made from grapes include rice wine and fruit wines such as plum, cherry, pomegranate and elderberry. Wine has been produced for thousands of years.</p></div>
+		<div class="col-lg-1"></div>
+	</div>
+</div>
+
+<div class="container-fluid about_image">
+	<h3 class="text-dark"><i class="fa fa-snowflake-o" aria-hidden="true"></i> &nbsp;&nbsp;Black Friday Sales</h3>
+	<div class="row about_image">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5"><p class="text-secondary">Black Friday is a biggest holiday shopping season in the United States and has been regarded as a great opportunity for retailers to increase their sales. Through the years, this practice has been extended to other countries in the world. Although its global widespread, there has been a lack of research attention to consumers' attitudes toward and behaviors during Black Friday. In 2016 for the first time the Black Friday practice was introduced in Greece. Therefore, the purpose of the study was to study the behaviors, attitudes and intentions of Greek consumers towards Black Friday. Moreover, the objective of this research was to understand differences between shoppers on Black Friday and non-shoppers and to suggest how retailers can harness these differences in terms of marketing. The online survey research method was used and data was gathered from 540 consumers.</p></div>
+		<div class="col-lg-5">
+			<img src="{% static 'image/black-friday.png' %}">
+		</div>
+		<div class="col-lg-1"></div>
+	</div>
+</div>
+
+{% endblock %}

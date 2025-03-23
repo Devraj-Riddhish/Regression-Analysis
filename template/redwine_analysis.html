@@ -1,0 +1,156 @@
+{% extends 'layout/master.html' %}
+{% load static %}
+{% block main %}
+
+<style type="text/css">
+	.boston_ana img
+	{
+		width: 100%;
+	}
+</style>
+<br>
+<center><h1 class="text-center", style="color: #800000;">Redwine Quality Analysis Report</h1></center>
+<hr/>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r1.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">It can present data in a way that is suitable for data analysis via its Series and DataFrame data structures. The package contains multiple methods for convenient data filtering. Pandas has a variety of utilities to perform Input/Output operations in a seamless manner.pyplot is a collection of functions in the popular visualization package Matplotlib.
+			</p>
+		</div>
+
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">OUTPUT </p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r2.PNG' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/bredwine/r3.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Represent the 1st  5 colomn ans row of the data set</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">Represent the shape of the dataset.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r4.PNG' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r5.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">The info() function is used to print a concise summary of a DataFrame. This method prints information about a DataFrame including the index dtype and column dtypes, non-null values and memory usage.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">The describe() method is used for calculating some statistical data like percentile, mean and std of the numerical values of the Series or DataFrame. It analyzes both numeric and object series and also the DataFrame column sets of mixed data types.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r6.PNG' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r7.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">isnull(). sum(). sum() returns the number of missing values in the data set. A simple way to deal with data containing missing values is to skip rows with missing values in the dataset.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">	
+		<div class = "col-lg-6">
+			<p class="text-secondary">unique() function. The unique() function is used to find the unique elements of an array. Returns the sorted unique elements of an array. ... the indices of the unique array that reconstruct the input array. the number of times each unique value comes up in the input array.</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r8.PNG' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r9.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">Sort object by labels (along an axis). Returns a new DataFrame sorted by label if inplace argument is False , otherwise updates the original DataFrame and returns None.</p>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">		
+		<div class = "col-lg-6">
+			<p class="text-secondary">represent the value of the
+			Fine       
+			Superior     
+			Inferior     
+			</p>
+		</div>
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r10.PNG' %}">
+		</div>
+	</div>
+</div>
+<br>
+
+<div class ="container ">
+	<div class ="row">
+		<div class = "col-lg-6 boston_ana">
+			<img src="{% static 'image/redwine/r11.PNG' %}">
+		</div>
+		<div class = "col-lg-6">
+			<p class="text-secondary">mean. Compute mean of groups, excluding missing values. Groupby one column and return the mean of the remaining columns in each group</p>
+		</div>
+	</div>
+</div>
+<br>
+
+
+{% endblock %}
